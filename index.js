@@ -1,7 +1,9 @@
+const os = require("os");
 var newman = require('newman');
 
-var collection = process.argv[2];
-var env = process.argv[3];
+const userHomeDir = os.homedir();
+var collection = userHomeDir+"/Postman/"+process.argv[2]+".postman_collection.json";
+var env = userHomeDir+"/Postman/"+process.argv[3]+".postman_environment.json";
 console.log(collection);
 
 newman.run({
